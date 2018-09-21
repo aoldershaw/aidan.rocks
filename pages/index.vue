@@ -12,7 +12,8 @@
       </h2>
       <div class="links-home">
         <nuxt-link to="/projects">Projects</nuxt-link>
-        <nuxt-link to="/resume">Resume</nuxt-link>
+        <a href="/resume.pdf">Resume</a>
+        <!-- <nuxt-link to="/resume">Resume</nuxt-link> -->
         <a href="https://github.com/aoldershaw" target="_blank">GitHub</a>
       </div>
     </div>
