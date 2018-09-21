@@ -72,6 +72,7 @@ html {
 
 .page {
   min-height: 100vh;
+  transition: all 0.5s ease-out;
 }
 
 .no-link {
