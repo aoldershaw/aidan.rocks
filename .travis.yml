@@ -3,18 +3,19 @@ node_js:
 - node
 cache:
   directories:
-  - $HOME/.npm
+  - "$HOME/.npm"
 script:
 - npm run generate
 deploy:
   provider: s3
   access_key_id: AKIAIWHYISVC2CQZPOQA
   secret_access_key:
-    secure: viRS+JIfQ4q8uU2Mte36GH8KfgSseDxOPYA4qYC1j9QDVQWanNaEbGDCbDed2NBJssvHjsv7c88uUqSyruU66EY/nZkBRWXww1KKW/U5xeHopxq18w4btiCnEX9XszK66NowAuASfFAHRTIuZ6pV8ZU+GmJF9OjGlaGTwmB/oVDHRtzL1VMqCZmRyDXFdefHc2hxaks8dOdeasqwYtVaoRwymOGCWSwqIJ6T5ieYbL7F3bFU0YMftyD68zxEw0J96y2tqzlFHNd5BiI/GZ7M6MZydsSF/sNepT9atiTyxjPFCWQ5lSp2A9Oyfw7/orEzVfVZEhyg5dD/i/1nSfoDMmBA49pfZJQg7SpRQl14iMqahPpwaZMkxGEMl0JR8Gs+HdQvbQRy8buaGbhL1RLPzuqeJWiLC1bmNGlSTHbtkW4lYP1VYgCa8FcMwwC+CIVEZVTBTSOks8EWgFbb1Zll7ybhnGOR006qkEn2sRyZBW+pj764vROFsUSVNmnGGw6j1iZ+u6Hwk9k8vpWQjNvfydMPaLPdCtAkjg1l6uShJ/g07He05fkDDVkA3LbcLYBu47HmvMhGMhbLKwYkn3VfBl2kUbEcwNWhZQIe711UDMIBklQ8WBgxmbSAzLmOesV7ZFCj5m2Gaao9G8+sOOLj7S+CavZhXWosAiPEb89Mu/8=
+    secure: CWA9xAik3Ms3nHbHst6o+Voi8qQinpEczVTY5oKGmjSqDxtSwESTOtpbvHKfHD8XBNShcbu2UZY3+cZH+Y7RL6cSTP6bRnYZ9u5lqoFlM0IPCd4L8CX7dNKn2xmhOFSz2pU3byGilVEaGCWzdJw5RRonqh9VFWYsD5ZOYH18jJYM0WXO7+2sGCNggYl4OEtlzHK76dr8qUlaVLd+fM5iGcL0IrJliR/1+/w16BQdhSL50lmnlfvkp7QuQGUtXUgRT3H+wyJG8Q2bWcdgqz+K/ZFFq0ZdR9463ZO8ooMM3JvbiaTr54EBsMxIpdG/nVhmcZlcN4FhavYGlPNhT1ohAaVRGxgUf8lDZO+NuI1K0t7i//gOHrWgmmzode6mPCH6LXqdo0STHFWTffa4PEUyWvHLxFsRQ+Bmez+mQZ7nr4gJlAj06XyDblwyLepel3FlLDt1jinqvcOAQcDopWpuPUjATg0wlNHc+tUg6gR/CmEPpqf/WMsZ3GLNVFBoAKWfCmdonkbKtuRjj+wQMs1AVUBQysDWjtY5U2Aidak55PurqE5bvNq2X6ZwnRxKxLj563Zh2erwjizm9ihTjC3xQWglQyTbtN31Ymsd7gih96We0SV5fwxcmEmWsWtPP2+uIX/vSsKbxOxNV6mOMReZSBSNrUuz8CM5IZT3B8Rhgyk=
   bucket: aidan.rocks
-  region: ca-central-1
-  local_dir: dist
-  skip_cleanup: true
+  local-dir: dist
+  acl: public_read
+  on:
+    repo: aoldershaw/aidan.rocks
 branches:
   only:
   - master
