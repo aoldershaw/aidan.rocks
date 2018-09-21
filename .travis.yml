@@ -17,6 +17,7 @@ deploy:
   on:
     repo: aoldershaw/aidan.rocks
   skip_cleanup: true
+  region: ca-central-1
 branches:
   only:
   - master
