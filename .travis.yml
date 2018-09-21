@@ -3,7 +3,7 @@ node_js:
 - node
 cache:
   directories:
-  - node_modules
+  - $HOME/.npm
 script:
 - npm run generate
 deploy:
