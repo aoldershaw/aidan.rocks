@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+- node
+cache:
+  directories:
+  - node_modules
+script:
+- npm run generate
+deploy:
+  provider: s3
+  access_key_id: AKIAIWHYISVC2CQZPOQA
+  secret_access_key:
+    secure: viRS+JIfQ4q8uU2Mte36GH8KfgSseDxOPYA4qYC1j9QDVQWanNaEbGDCbDed2NBJssvHjsv7c88uUqSyruU66EY/nZkBRWXww1KKW/U5xeHopxq18w4btiCnEX9XszK66NowAuASfFAHRTIuZ6pV8ZU+GmJF9OjGlaGTwmB/oVDHRtzL1VMqCZmRyDXFdefHc2hxaks8dOdeasqwYtVaoRwymOGCWSwqIJ6T5ieYbL7F3bFU0YMftyD68zxEw0J96y2tqzlFHNd5BiI/GZ7M6MZydsSF/sNepT9atiTyxjPFCWQ5lSp2A9Oyfw7/orEzVfVZEhyg5dD/i/1nSfoDMmBA49pfZJQg7SpRQl14iMqahPpwaZMkxGEMl0JR8Gs+HdQvbQRy8buaGbhL1RLPzuqeJWiLC1bmNGlSTHbtkW4lYP1VYgCa8FcMwwC+CIVEZVTBTSOks8EWgFbb1Zll7ybhnGOR006qkEn2sRyZBW+pj764vROFsUSVNmnGGw6j1iZ+u6Hwk9k8vpWQjNvfydMPaLPdCtAkjg1l6uShJ/g07He05fkDDVkA3LbcLYBu47HmvMhGMhbLKwYkn3VfBl2kUbEcwNWhZQIe711UDMIBklQ8WBgxmbSAzLmOesV7ZFCj5m2Gaao9G8+sOOLj7S+CavZhXWosAiPEb89Mu/8=
+  bucket: aidan.rocks
+  region: ca-central-1
+  local_dir: dist
+branches:
+  only:
+  - master
