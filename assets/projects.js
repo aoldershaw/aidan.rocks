@@ -32,7 +32,7 @@ module.exports = [
       bg: "#a3d4ff",
       text: "#0f1c28",
       shadow: "#396b96",
-      pillBg: "#1d364c",
+      pillBg: "rgb(45, 93, 136)",
       pillText: "#eee"
     }
   },

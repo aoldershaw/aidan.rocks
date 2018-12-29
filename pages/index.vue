@@ -5,7 +5,11 @@
       <h2 class="subtitle">
         I'm a 4th year student at McGill University, where I study Software Engineering (B.Sc.)
         <br>I love cooking and playing video games (
-        <a href="https://www.rocketleague.com/" class="no-link" target="_blank">⚽🚗</a>), but most of all,
+        <a
+          href="https://www.rocketleague.com/"
+          class="no-link"
+          target="_blank"
+        >⚽🚗</a>), but most of all,
         I love exploring new technologies and developing software.
         <br>Click on the links below to learn a bit more about me.
       </h2>

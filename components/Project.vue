@@ -1,14 +1,18 @@
 <template>
   <li class="project">
     <div class="wrapper" @mouseover="hovering = true" @mouseout="hovering = false">
-      <nuxt-link :to="`/projects/${project.id}`" class="no-link">
+      <nuxt-link :to="`/projects/${project.id}`" class="no-link" :aria-label="project.title">
         <NavBar :title="project.title" :icon="project.icon"/>
       </nuxt-link>
       <div class="content">
-        <nuxt-link :to="`/projects/${project.id}`" class="no-link">
+        <nuxt-link :to="`/projects/${project.id}`" class="no-link" :aria-label="project.title">
           <div class="images">
-            <img :src="imageUrl('front')" :class="{img: true, hidden: hovering}">
-            <img :src="imageUrl('back')" class="img behind">
+            <img
+              :src="imageUrl('front')"
+              :class="{img: true, hidden: hovering}"
+              :alt="`${project.title} img1`"
+            >
+            <img :src="imageUrl('back')" class="img behind" :alt="`${project.title} img2`">
           </div>
         </nuxt-link>
         <div
@@ -21,6 +25,7 @@
             :key="i"
             :href="link.href"
             target="_blank"
+            rel="noopener"
             :style="{'color': project.theme.text}"
           >{{link.title}}</a>
         </div>
@@ -52,7 +57,7 @@ export default {
   },
   methods: {
     imageUrl(side) {
-      if (window.innerWidth <= 768) {
+      if (500 < window.innerWidth && window.innerWidth <= 768) {
         return this.project.images.full[side];
       } else {
         return this.project.images.thumb[side];

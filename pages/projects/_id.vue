@@ -12,6 +12,7 @@
           :key="i"
           :href="link.href"
           target="_blank"
+          rel="noopener"
           :style="{'color': project.theme.text}"
         >{{link.title}}</a>
       </div>
@@ -24,10 +25,18 @@
           class="carousel"
         >
           <slide>
-            <img class="carousel-img" :src="project.images.full.front">
+            <img
+              class="carousel-img"
+              :src="project.images.full.front"
+              :alt="`${project.title} img1`"
+            >
           </slide>
           <slide>
-            <img class="carousel-img" :src="project.images.full.back">
+            <img
+              class="carousel-img"
+              :src="project.images.full.back"
+              :alt="`${project.title} img2`"
+            >
           </slide>
         </carousel>
       </div>
@@ -118,12 +127,11 @@ export default {
 
 h1 {
   font-size: 2.5em;
-  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.15);
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.15);
 }
 
 .subtitle {
   font-size: 1em;
-  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.15);
   font-weight: 600;
   margin-bottom: 20px;
 }
