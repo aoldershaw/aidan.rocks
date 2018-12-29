@@ -4,7 +4,7 @@
     <ul class="project-list">
       <Project v-for="project in projects" :key="project.id" :project="project"/>
     </ul>
-    <ReturnButton to="/" colour="#000" />
+    <ReturnButton to="/" colour="#000"/>
   </section>
 </template>
 

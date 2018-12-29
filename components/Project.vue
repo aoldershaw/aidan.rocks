@@ -2,19 +2,27 @@
   <li class="project">
     <div class="wrapper" @mouseover="hovering = true" @mouseout="hovering = false">
       <nuxt-link :to="`/projects/${project.id}`" class="no-link">
-        <NavBar :title="project.title" :icon="project.icon" />
+        <NavBar :title="project.title" :icon="project.icon"/>
       </nuxt-link>
       <div class="content">
         <nuxt-link :to="`/projects/${project.id}`" class="no-link">
           <div class="images">
-            <img :src="project.images.front" :class="{img: true, hidden: hovering}">
-            <img :src="project.images.back" class="img behind">
+            <img :src="imageUrl('front')" :class="{img: true, hidden: hovering}">
+            <img :src="imageUrl('back')" class="img behind">
           </div>
         </nuxt-link>
-        <div class="links" v-if="project.links && project.links.length" :style="{'background-color': project.theme.bg}">
-          <a v-for="(link, i) in project.links" :key="i" :href="link.href" target="_blank" :style="{'color': project.theme.text}">
-            {{link.title}}
-          </a>
+        <div
+          class="links"
+          v-if="project.links && project.links.length"
+          :style="{'background-color': project.theme.linkBar}"
+        >
+          <a
+            v-for="(link, i) in project.links"
+            :key="i"
+            :href="link.href"
+            target="_blank"
+            :style="{'color': project.theme.text}"
+          >{{link.title}}</a>
         </div>
       </div>
     </div>
@@ -40,6 +48,15 @@ export default {
         return this.project.images.back;
       }
       return this.project.images.front;
+    }
+  },
+  methods: {
+    imageUrl(side) {
+      if (window.innerWidth <= 768) {
+        return this.project.images.full[side];
+      } else {
+        return this.project.images.thumb[side];
+      }
     }
   }
 };

@@ -1,28 +1,40 @@
 <template>
   <div>
     <section class="page-content">
-      <h1><span class="icon" v-if="project.icon">{{project.icon}}</span> {{project.title}}</h1>
-      <p class="subtitle">{{project.subtitle}}</p>
+      <h1>
+        <span class="icon" v-if="project.icon">{{project.icon}}</span>
+        {{project.title}}
+      </h1>
+      <p class="subtitle" v-html="project.subtitle"></p>
       <div class="links" v-if="project.links && project.links.length">
-        <a v-for="(link, i) in project.links" :key="i" :href="link.href" target="_blank" :style="{'color': project.theme.text}">
-          {{link.title}}
-        </a>
+        <a
+          v-for="(link, i) in project.links"
+          :key="i"
+          :href="link.href"
+          target="_blank"
+          :style="{'color': project.theme.text}"
+        >{{link.title}}</a>
       </div>
       <div class="container">
         <NavBar/>
-        <carousel :per-page="1" :paginationActiveColor="project.theme.text" :paginationColor="project.theme.shadow" class="carousel">
+        <carousel
+          :per-page="1"
+          :paginationActiveColor="project.theme.text"
+          :paginationColor="project.theme.shadow"
+          class="carousel"
+        >
           <slide>
-            <img class="carousel-img" :src="project.images.front">
+            <img class="carousel-img" :src="project.images.full.front">
           </slide>
           <slide>
-            <img class="carousel-img" :src="project.images.back">
+            <img class="carousel-img" :src="project.images.full.back">
           </slide>
         </carousel>
       </div>
       <div class="descriptions" v-if="project.description && project.description.length">
         <h2>Details</h2>
         <ul>
-          <li v-for="(pt, i) in project.description" :key="i">{{pt}}</li>
+          <li v-for="(pt, i) in project.description" :key="i" v-html="pt"></li>
         </ul>
       </div>
       <div class="tags" v-if="project.tags && project.tags.length">
@@ -34,9 +46,12 @@
     </section>
     <LeftRightNav
       :colour="project.theme.text"
-      :left="urlFor(prevProject)" :leftText="prevProject.title"
-      :right="urlFor(nextProject)" :rightText="nextProject.title" />
-    <ReturnButton to="/projects" :colour="project.theme.text" />
+      :left="urlFor(prevProject)"
+      :leftText="prevProject.title"
+      :right="urlFor(nextProject)"
+      :rightText="nextProject.title"
+    />
+    <ReturnButton to="/projects" :colour="project.theme.text"/>
   </div>
 </template>
 

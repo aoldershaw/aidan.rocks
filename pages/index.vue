@@ -1,19 +1,17 @@
 <template>
   <section class="container">
     <div>
-      <h1 class="title">
-        Hello, my name is Aidan Oldershaw
-      </h1>
+      <h1 class="title">Hello, my name is Aidan Oldershaw</h1>
       <h2 class="subtitle">
-        I'm a 4th year student at McGill University, where I study Software Engineering (B.Sc.) <br>
-        I love cooking and playing video games (<a href="https://www.rocketleague.com/" class="no-link" target="_blank">⚽🚗</a>), but most of all, 
-        I love exploring new technologies and developing software. <br>
-        Click on the links below to learn a bit more about me.
+        I'm a 4th year student at McGill University, where I study Software Engineering (B.Sc.)
+        <br>I love cooking and playing video games (
+        <a href="https://www.rocketleague.com/" class="no-link" target="_blank">⚽🚗</a>), but most of all,
+        I love exploring new technologies and developing software.
+        <br>Click on the links below to learn a bit more about me.
       </h2>
       <div class="links-home">
         <nuxt-link to="/projects">Projects</nuxt-link>
         <a href="/resume.pdf">Resume</a>
-        <!-- <nuxt-link to="/resume">Resume</nuxt-link> -->
         <a href="https://github.com/aoldershaw" target="_blank">GitHub</a>
       </div>
     </div>
